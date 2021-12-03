@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce", "E-Commerce.csproj", "{03973D6F-0B2D-4AA3-AAFA-5216B486C053}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\Services\Services.csproj", "{AD263731-51E1-4AAC-B802-EB6716342511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{19DB8378-EE2B-4612-98C4-920A7CDFCF42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03973D6F-0B2D-4AA3-AAFA-5216B486C053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03973D6F-0B2D-4AA3-AAFA-5216B486C053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03973D6F-0B2D-4AA3-AAFA-5216B486C053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03973D6F-0B2D-4AA3-AAFA-5216B486C053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD263731-51E1-4AAC-B802-EB6716342511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD263731-51E1-4AAC-B802-EB6716342511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD263731-51E1-4AAC-B802-EB6716342511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD263731-51E1-4AAC-B802-EB6716342511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19DB8378-EE2B-4612-98C4-920A7CDFCF42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19DB8378-EE2B-4612-98C4-920A7CDFCF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19DB8378-EE2B-4612-98C4-920A7CDFCF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19DB8378-EE2B-4612-98C4-920A7CDFCF42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C4992E4-883D-485C-AA13-E3B8C6BA5D3A}
+	EndGlobalSection
+EndGlobal
