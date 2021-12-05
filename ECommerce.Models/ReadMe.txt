@@ -1,1 +1,1 @@
-﻿
+﻿This library should have request and response models. This should only be included in Services and WebApi layer.

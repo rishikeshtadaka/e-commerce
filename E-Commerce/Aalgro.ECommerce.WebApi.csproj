@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Aalgro.ECommerce.IoC\Aalgro.ECommerce.IoC.csproj" />
+    <ProjectReference Include="..\ECommerce.Models\Aalgro.ECommerce.Models.csproj" />
     <ProjectReference Include="..\Services\Aalgro.ECommerce.Services.csproj" />
   </ItemGroup>
 

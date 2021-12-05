@@ -13,6 +13,5 @@ namespace Aalgro.ECommerce.Services.BaseService
         void Insert(T entity);
         void Delete(T entity);
         void Delete(long Id);
-        void Update(T entity);
     }
 }

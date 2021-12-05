@@ -8,40 +8,44 @@ using System.Threading.Tasks;
 
 namespace Aalgro.ECommerce.Services.BaseService
 {
-    public abstract class Service<T> : IService<T> where T : BaseEntity
+    public abstract class Service<TDomain,TModel> : IService<TModel> where TDomain : BaseEntity where TModel:class
     {
-        private readonly IRepository<T> _repository;
-        public Service(IRepository<T> repository)
+        protected readonly IRepository<TDomain> _repository;
+        public Service(IRepository<TDomain> repository)
         {
             _repository = repository;
         }
-        public virtual void Delete(T entity)
+        protected virtual void DeleteEntity(TDomain entity)
         {
             _repository.Delete(entity);
         }
 
-        public virtual void Delete(long Id)
+        protected virtual void DeleteEntity(long Id)
         {
-            var entity = Get().Where(t => t.Id == Id).FirstOrDefault();
-            Delete(entity);
+            var entity = GetEntities().Where(t => t.Id == Id).FirstOrDefault();
+            DeleteEntity(entity);
         }
 
-        public virtual T GetById(long Id)
+        protected virtual TDomain GetEntityById(long Id)
         {
-            return Get().Where(t => t.Id == Id).FirstOrDefault();
+            return GetEntities().Where(t => t.Id == Id).FirstOrDefault();
         }
 
-        public virtual IQueryable<T> Get()
+        protected virtual IQueryable<TDomain> GetEntities()
         {
             return _repository.Get().AsQueryable();
         }
 
-        public virtual void Insert(T entity)
+        protected virtual void InsertEntity(TDomain entity)
         {
             _repository.Insert(entity);
         }
 
-        public abstract void Update(T entity);
-
+        public abstract IQueryable<TModel> Get();
+        public abstract TModel GetById(long Id);
+        public abstract void Insert(TModel entity);
+        public abstract void Delete(TModel entity);
+        public abstract void Delete(long Id);
+        public abstract void Update(TModel entity);
     }
 }

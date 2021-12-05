@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Aalgro.ECommerce.Services.CustomerService;
+using ECommerce.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,17 @@ namespace E_Commerce.Controllers
     [Route("[users]")]
     public class UserController : Controller
     {
-        public IActionResult Index()
+        private ICustomerService customerService;
+        public UserController(ICustomerService customerService)
         {
-            return View();
+            this.customerService = customerService;
+        }
+
+        [HttpGet]
+        public IEnumerable<CustomerModel> Get()
+        {
+            var list = this.customerService.Get();
+            return list;
         }
     }
 }

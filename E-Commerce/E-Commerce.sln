@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aalgro.ECommerce.Domains", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aalgro.ECommerce.IoC", "..\Aalgro.ECommerce.IoC\Aalgro.ECommerce.IoC.csproj", "{D6C6735E-FAEB-425D-9D82-B3155BCE6CBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aalgro.ECommerce.Controllers", "..\Aalgro.ECommerce.Controllers\Aalgro.ECommerce.Controllers.csproj", "{2DD3A4EE-0BB3-47C7-8ECC-0BE27EF84C6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{D6C6735E-FAEB-425D-9D82-B3155BCE6CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6C6735E-FAEB-425D-9D82-B3155BCE6CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6C6735E-FAEB-425D-9D82-B3155BCE6CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD3A4EE-0BB3-47C7-8ECC-0BE27EF84C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD3A4EE-0BB3-47C7-8ECC-0BE27EF84C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD3A4EE-0BB3-47C7-8ECC-0BE27EF84C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD3A4EE-0BB3-47C7-8ECC-0BE27EF84C6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

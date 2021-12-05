@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Aalgro.ECommerce.Domains\Aalgro.ECommerce.Domains.csproj" />
     <ProjectReference Include="..\DataAccess\Aalgro.ECommerce.DataAccess.csproj" />
+    <ProjectReference Include="..\ECommerce.Models\Aalgro.ECommerce.Models.csproj" />
   </ItemGroup>
 
 </Project>
