@@ -1,3 +1,4 @@
+using Aalgro.ECommerce.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,7 +34,7 @@ namespace E_Commerce
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "E_Commerce", Version = "v1" });
             });
 
-
+            services.AddServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

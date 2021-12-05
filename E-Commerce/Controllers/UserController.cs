@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace E_Commerce.Controllers
 {
     [ApiController]
-    [Route("[users]")]
+    [Route("users")]
     public class UserController : Controller
     {
         private ICustomerService customerService;
