@@ -18,6 +18,7 @@ namespace Aalgro.ECommerce.Services.BaseService
         protected virtual void DeleteEntity(TDomain entity)
         {
             _repository.Delete(entity);
+            this.SaveChanges();
         }
 
         protected virtual void DeleteEntity(long Id)
@@ -39,6 +40,12 @@ namespace Aalgro.ECommerce.Services.BaseService
         protected virtual void InsertEntity(TDomain entity)
         {
             _repository.Insert(entity);
+            this.SaveChanges();
+        }
+
+        protected void SaveChanges()
+        {
+            _repository.SaveChanges();
         }
 
         public abstract IQueryable<TModel> Get();

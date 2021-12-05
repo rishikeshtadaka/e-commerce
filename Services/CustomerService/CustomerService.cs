@@ -28,6 +28,7 @@ namespace Aalgro.ECommerce.Services.CustomerService
             var customer = this.GetEntityById(entity.Id);
             customer.FirstName = entity.FirstName;
             customer.LastName = entity.LastName;
+            this.SaveChanges();
         }
 
         

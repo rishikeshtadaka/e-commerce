@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using DataAccess;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace E_Commerce.Filters
 {
-    public class Transaction : IActionFilter
+    public class Transaction : ActionFilterAttribute
     {
-        public void OnActionExecuted(ActionExecutedContext context)
+        public override void OnActionExecuted(ActionExecutedContext context)
         {
-            throw new NotImplementedException();
+            ECommerceDbContext dbContext = (ECommerceDbContext)context.HttpContext.RequestServices.GetService(typeof(ECommerceDbContext));            
+            dbContext.Database.CommitTransaction();
         }
 
-        public void OnActionExecuting(ActionExecutingContext context)
+        public override void OnActionExecuting(ActionExecutingContext context)
         {
-            throw new NotImplementedException();
+            ECommerceDbContext dbContext =(ECommerceDbContext)context.HttpContext.RequestServices.GetService(typeof(ECommerceDbContext));
+            dbContext.Database.BeginTransaction();
         }
     }
 }

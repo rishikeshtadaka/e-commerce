@@ -1,4 +1,5 @@
 ﻿using Aalgro.ECommerce.Services.CustomerService;
+using E_Commerce.Filters;
 using ECommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,8 +20,10 @@ namespace E_Commerce.Controllers
         }
 
         [HttpGet]
+        [Transaction]
         public IEnumerable<CustomerModel> Get()
         {
+            this.customerService.Insert(new CustomerModel { FirstName = "f1", LastName = "l1" });
             var list = this.customerService.Get();
             return list;
         }
