@@ -1,4 +1,5 @@
 ﻿using DataAccess;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,13 @@ namespace Aalgro.ECommerce.DataAccess
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly ECommerceDbContext _context;
-        public UnitOfWork(ECommerceDbContext context)
+        private readonly DbContext _context;
+        public UnitOfWork(IDbContext context)
         {
-            _context = context;
+            _context = context.GetDbContext();
         }
 
-        public ECommerceDbContext DBInstance
+        public DbContext DBInstance
         {
             get { return _context; }
         }

@@ -1,4 +1,5 @@
-﻿using DataAccess;
+﻿using Aalgro.ECommerce.DataAccess;
+using DataAccess;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ namespace E_Commerce.Filters
 
         public override void OnActionExecuted(ActionExecutedContext context)
         {
-            ECommerceDbContext dbContext = (ECommerceDbContext)context.HttpContext.RequestServices.GetService(typeof(ECommerceDbContext));
+            IDbContext dbCtx = (IDbContext)context.HttpContext.RequestServices.GetService(typeof(IDbContext));
+            var dbContext = dbCtx.GetDbContext();
             if (context.Exception != null || !IsSuccessStatusCode(context.HttpContext.Response.StatusCode))
             {
                 dbContext.Database.RollbackTransaction();
@@ -31,7 +33,8 @@ namespace E_Commerce.Filters
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            ECommerceDbContext dbContext =(ECommerceDbContext)context.HttpContext.RequestServices.GetService(typeof(ECommerceDbContext));
+            IDbContext dbCtx = (IDbContext)context.HttpContext.RequestServices.GetService(typeof(IDbContext));
+            var dbContext = dbCtx.GetDbContext();
             dbContext.Database.BeginTransaction();
         }
     }
