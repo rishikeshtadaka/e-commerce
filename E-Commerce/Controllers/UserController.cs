@@ -23,7 +23,7 @@ namespace E_Commerce.Controllers
         [Transaction]
         public IEnumerable<CustomerModel> Get()
         {
-            this.customerService.Insert(new CustomerModel { FirstName = "f1", LastName = "l1" });
+            this.customerService.Insert(new CustomerModel {Id=1, FirstName = "f1", LastName = "l1" });
             var list = this.customerService.Get();
             return list;
         }
