@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Services
+namespace ECommerce.Models
 {
     public class Class1
     {

@@ -32,6 +32,8 @@ namespace E_Commerce
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "E_Commerce", Version = "v1" });
             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

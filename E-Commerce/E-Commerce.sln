@@ -3,11 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce", "E-Commerce.csproj", "{03973D6F-0B2D-4AA3-AAFA-5216B486C053}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aalgro.ECommerce.WebApi", "Aalgro.ECommerce.WebApi.csproj", "{03973D6F-0B2D-4AA3-AAFA-5216B486C053}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\Services\Services.csproj", "{AD263731-51E1-4AAC-B802-EB6716342511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aalgro.ECommerce.Services", "..\Services\Aalgro.ECommerce.Services.csproj", "{AD263731-51E1-4AAC-B802-EB6716342511}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{19DB8378-EE2B-4612-98C4-920A7CDFCF42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aalgro.ECommerce.DataAccess", "..\DataAccess\Aalgro.ECommerce.DataAccess.csproj", "{19DB8378-EE2B-4612-98C4-920A7CDFCF42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{57F86C60-15E1-426E-811C-9B4277D97255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aalgro.ECommerce.Models", "..\ECommerce.Models\Aalgro.ECommerce.Models.csproj", "{4D5485AD-9D85-4C19-A565-931E0151454E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algro.ECommerce.DataAccess.Tests", "..\Algro.ECommerce.DataAccess.Tests\Algro.ECommerce.DataAccess.Tests.csproj", "{E533C351-2209-4FA9-917C-8DFA06BFA812}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algro.ECommerce.Services.Tests", "..\Algro.ECommerce.Services.Tests\Algro.ECommerce.Services.Tests.csproj", "{B622E17D-22C3-43F7-89E4-C04B4165E34A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algro.ECommerce.WebApi.Tests", "..\Algro.ECommerce.WebApi.Tests\Algro.ECommerce.WebApi.Tests.csproj", "{FB89A818-4905-400A-84B9-EDC5C5A0B566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aalgro.ECommerce.Common", "..\Algro.ECommerce.Common\Aalgro.ECommerce.Common.csproj", "{C5514F05-EFF0-4FA7-AC9F-086C4DB8A95E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aalgro.ECommerce.Middlewares", "..\Aalgro.ECommerce.Middleware\Aalgro.ECommerce.Middlewares.csproj", "{0DFDC8E4-A9AB-42E1-9BCD-3EB262912DBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aalgro.ECommerce.Domains", "..\Aalgro.ECommerce.Domains\Aalgro.ECommerce.Domains.csproj", "{9F856892-1EB5-4E04-BAD9-4ADB2084D560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aalgro.ECommerce.IoC", "..\Aalgro.ECommerce.IoC\Aalgro.ECommerce.IoC.csproj", "{D6C6735E-FAEB-425D-9D82-B3155BCE6CBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +45,46 @@ Global
 		{19DB8378-EE2B-4612-98C4-920A7CDFCF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19DB8378-EE2B-4612-98C4-920A7CDFCF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19DB8378-EE2B-4612-98C4-920A7CDFCF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D5485AD-9D85-4C19-A565-931E0151454E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5485AD-9D85-4C19-A565-931E0151454E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5485AD-9D85-4C19-A565-931E0151454E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5485AD-9D85-4C19-A565-931E0151454E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E533C351-2209-4FA9-917C-8DFA06BFA812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E533C351-2209-4FA9-917C-8DFA06BFA812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E533C351-2209-4FA9-917C-8DFA06BFA812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E533C351-2209-4FA9-917C-8DFA06BFA812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B622E17D-22C3-43F7-89E4-C04B4165E34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B622E17D-22C3-43F7-89E4-C04B4165E34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B622E17D-22C3-43F7-89E4-C04B4165E34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B622E17D-22C3-43F7-89E4-C04B4165E34A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB89A818-4905-400A-84B9-EDC5C5A0B566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB89A818-4905-400A-84B9-EDC5C5A0B566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB89A818-4905-400A-84B9-EDC5C5A0B566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB89A818-4905-400A-84B9-EDC5C5A0B566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5514F05-EFF0-4FA7-AC9F-086C4DB8A95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5514F05-EFF0-4FA7-AC9F-086C4DB8A95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5514F05-EFF0-4FA7-AC9F-086C4DB8A95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5514F05-EFF0-4FA7-AC9F-086C4DB8A95E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DFDC8E4-A9AB-42E1-9BCD-3EB262912DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DFDC8E4-A9AB-42E1-9BCD-3EB262912DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DFDC8E4-A9AB-42E1-9BCD-3EB262912DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DFDC8E4-A9AB-42E1-9BCD-3EB262912DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F856892-1EB5-4E04-BAD9-4ADB2084D560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F856892-1EB5-4E04-BAD9-4ADB2084D560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F856892-1EB5-4E04-BAD9-4ADB2084D560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F856892-1EB5-4E04-BAD9-4ADB2084D560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6C6735E-FAEB-425D-9D82-B3155BCE6CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C6735E-FAEB-425D-9D82-B3155BCE6CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C6735E-FAEB-425D-9D82-B3155BCE6CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C6735E-FAEB-425D-9D82-B3155BCE6CBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E533C351-2209-4FA9-917C-8DFA06BFA812} = {57F86C60-15E1-426E-811C-9B4277D97255}
+		{B622E17D-22C3-43F7-89E4-C04B4165E34A} = {57F86C60-15E1-426E-811C-9B4277D97255}
+		{FB89A818-4905-400A-84B9-EDC5C5A0B566} = {57F86C60-15E1-426E-811C-9B4277D97255}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C4992E4-883D-485C-AA13-E3B8C6BA5D3A}
