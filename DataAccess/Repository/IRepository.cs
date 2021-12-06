@@ -8,9 +8,9 @@ namespace Aalgro.ECommerce.DataAccess.Repository
 {
     public interface IRepository<T> where T : class
     {
-        void Insert(T entity);
+        Task InsertAsync(T entity);
         void Delete(T entity);
-        List<T> Get();
-        void SaveChanges();
+        Task<List<T>> GetAsync();
+        Task SaveChangesAsync();
     }
 }

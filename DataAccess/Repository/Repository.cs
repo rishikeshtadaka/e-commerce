@@ -16,21 +16,21 @@ namespace Aalgro.ECommerce.DataAccess.Repository
             this.context = context.GetDbContext();
             _dbSet = context.GetDbContext().Set<T>();
         }
-        public void Insert(T entity)
+        public async Task InsertAsync(T entity)
         {
-            _dbSet.Add(entity);
+            await _dbSet.AddAsync(entity);
         }
         public void Delete(T entity)
         {
             _dbSet.Remove(entity);
         }
-        public List<T> Get()
+        public async Task<List<T>> GetAsync()
         {
-            return _dbSet.ToList();
+            return await _dbSet.ToListAsync();
         }
-        public void SaveChanges()
+        public async Task SaveChangesAsync()
         {
-            this.context.SaveChanges();
+            await this.context.SaveChangesAsync();
         }
 
         private bool disposed = false;

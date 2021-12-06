@@ -8,10 +8,10 @@ namespace Aalgro.ECommerce.Services.BaseService
 {
     public interface IService<T> where T : class
     {
-        IQueryable<T> Get();
-        T GetById(long Id);
-        void Insert(T entity);
-        void Delete(T entity);
-        void Delete(long Id);
+        Task<IEnumerable<T>> Get();
+        Task<T> GetById(long Id);
+        Task Insert(T entity);
+        Task Delete(T entity);
+        Task Delete(long Id);
     }
 }

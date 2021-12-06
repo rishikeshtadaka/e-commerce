@@ -21,9 +21,9 @@ namespace E_Commerce.Controllers
 
         [HttpGet]
         [Transaction]
-        public IEnumerable<CustomerModel> Get()
+        public async Task<IEnumerable<CustomerModel>> Get()
         {
-            var list = this.customerService.Get();
+            var list = await this.customerService.Get();
             return list;
         }
     }

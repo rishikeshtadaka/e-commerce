@@ -15,44 +15,46 @@ namespace Aalgro.ECommerce.Services.BaseService
         {
             _repository = repository;
         }
-        protected virtual void DeleteEntity(TDomain entity)
+        protected async virtual Task DeleteEntityAsync(TDomain entity)
         {
             _repository.Delete(entity);
-            this.SaveChanges();
+            await this.SaveChangesAsync();
         }
 
-        protected virtual void DeleteEntity(long Id)
+        protected async virtual Task DeleteEntityAsync(long Id)
         {
-            var entity = GetEntities().Where(t => t.Id == Id).FirstOrDefault();
-            DeleteEntity(entity);
+            var list = await GetEntitiesAsync();
+            var entity = list.Where(t => t.Id == Id).FirstOrDefault();
+            await DeleteEntityAsync(entity);
         }
 
-        protected virtual TDomain GetEntityById(long Id)
+        protected async virtual Task<TDomain> GetEntityByIdAsync(long Id)
         {
-            return GetEntities().Where(t => t.Id == Id).FirstOrDefault();
+            var list = await GetEntitiesAsync();
+            return list.Where(t => t.Id == Id).FirstOrDefault();
         }
 
-        protected virtual IQueryable<TDomain> GetEntities()
+        protected async virtual Task<IEnumerable<TDomain>> GetEntitiesAsync()
         {
-            return _repository.Get().AsQueryable();
+            return await _repository.GetAsync();
         }
 
-        protected virtual void InsertEntity(TDomain entity)
+        protected async virtual Task InsertEntity(TDomain entity)
         {
-            _repository.Insert(entity);
-            this.SaveChanges();
+            await _repository.InsertAsync(entity);
+            await this.SaveChangesAsync();
         }
 
-        protected void SaveChanges()
+        protected async Task SaveChangesAsync()
         {
-            _repository.SaveChanges();
+            await _repository.SaveChangesAsync();
         }
 
-        public abstract IQueryable<TModel> Get();
-        public abstract TModel GetById(long Id);
-        public abstract void Insert(TModel entity);
-        public abstract void Delete(TModel entity);
-        public abstract void Delete(long Id);
-        public abstract void Update(TModel entity);
+        public abstract Task<IEnumerable<TModel>> Get();
+        public abstract Task<TModel> GetById(long Id);
+        public abstract Task Insert(TModel entity);
+        public abstract Task Delete(TModel entity);
+        public abstract Task Delete(long Id);
+        public abstract Task Update(TModel entity);
     }
 }

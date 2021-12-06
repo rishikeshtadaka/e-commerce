@@ -18,38 +18,40 @@ namespace Aalgro.ECommerce.Services.CustomerService
             throw new NotImplementedException();
         }
 
-        public override IQueryable<CustomerModel> Get()
+        public async override Task<IEnumerable<CustomerModel>> Get()
         {
-            return this.GetEntities().Select(t => CustomerModel.PrepareModel(t));
+            var list = await this.GetEntitiesAsync();
+            return list.Select(t => CustomerModel.PrepareModel(t));
         }
 
-        public override void Update(CustomerModel entity)
+        public async override Task Update(CustomerModel entity)
         {
-            var customer = this.GetEntityById(entity.Id);
+            var customer = await this.GetEntityByIdAsync(entity.Id);
             customer.FirstName = entity.FirstName;
             customer.LastName = entity.LastName;
-            this.SaveChanges();
+            await this.SaveChangesAsync();
         }
 
         
-        public override CustomerModel GetById(long Id)
+        public async override Task<CustomerModel> GetById(long Id)
         {
-            return CustomerModel.PrepareModel(this.GetEntityById(Id));
+            var entity = await this.GetEntityByIdAsync(Id);
+            return CustomerModel.PrepareModel(entity);
         }
 
-        public override void Insert(CustomerModel entity)
+        public async override Task Insert(CustomerModel entity)
         {
-            this.InsertEntity(entity.ConvertToDomain());
+            await this.InsertEntity(entity.ConvertToDomain());
         }
 
-        public override void Delete(CustomerModel entity)
+        public async override Task Delete(CustomerModel entity)
         {
-            this.DeleteEntity(entity.ConvertToDomain());
+            await this.DeleteEntityAsync(entity.ConvertToDomain());
         }
 
-        public override void Delete(long Id)
+        public async override Task Delete(long Id)
         {
-            this.DeleteEntity(Id);
+            await this.DeleteEntityAsync(Id);
         }
     }
 }
