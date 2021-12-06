@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 namespace E_Commerce.Controllers
 {
     [ApiController]
-    [Route("users")]
-    public class UserController : Controller
+    [Route("customers")]
+    public class CustomerController : BaseController
     {
         private ICustomerService customerService;
-        public UserController(ICustomerService customerService)
+        public CustomerController(ICustomerService customerService)
         {
             this.customerService = customerService;
         }
