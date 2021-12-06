@@ -11,7 +11,6 @@ namespace Aalgro.ECommerce.IoC
     {
         public static void AddServices(this IServiceCollection services)
         {
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IDbContext, ECommerceDbContext>();

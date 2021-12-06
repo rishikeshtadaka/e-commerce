@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Aalgro.ECommerce.DataAccess.Repository
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T>, IDisposable where T : class
     {
-        private IUnitOfWork _unitOfWork;
+        private DbContext context;
         private DbSet<T> _dbSet;
-        public Repository(IUnitOfWork unitOfWork)
+        public Repository(IDbContext context)
         {
-            _unitOfWork = unitOfWork;
-            _dbSet = _unitOfWork.DBInstance.Set<T>();
+            this.context = context.GetDbContext();
+            _dbSet = context.GetDbContext().Set<T>();
         }
         public void Insert(T entity)
         {
@@ -30,7 +30,26 @@ namespace Aalgro.ECommerce.DataAccess.Repository
         }
         public void SaveChanges()
         {
-            _unitOfWork.DBInstance.SaveChanges();
+            this.context.SaveChanges();
+        }
+
+        private bool disposed = false;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    this.context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }
