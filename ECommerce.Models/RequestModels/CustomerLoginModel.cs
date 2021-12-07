@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aalgro.ECommerce.Models
+namespace Aalgro.ECommerce.Models.RequestModels
 {
     public class CustomerLoginModel
     {

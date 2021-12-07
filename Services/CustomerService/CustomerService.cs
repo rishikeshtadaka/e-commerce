@@ -1,7 +1,7 @@
 ﻿using Aalgro.ECommerce.DataAccess.Repository;
 using Aalgro.ECommerce.Domains;
+using Aalgro.ECommerce.Models.ResponseModels;
 using Aalgro.ECommerce.Services.BaseService;
-using ECommerce.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

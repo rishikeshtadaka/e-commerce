@@ -5,12 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aalgro.ECommerce.Models
+namespace Aalgro.ECommerce.Models.RequestModels
 {
     public class CustomerRegisterModel
     {
+        [Required(ErrorMessage = "First Name is required")]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessage = "Last Name is required")]
+        public string LastName { get; set; }
+
         [Required(ErrorMessage = "User Name is required")]
-        public string Username { get; set; }
+        public string UserName { get; set; }
 
         [EmailAddress]
         [Required(ErrorMessage = "Email is required")]

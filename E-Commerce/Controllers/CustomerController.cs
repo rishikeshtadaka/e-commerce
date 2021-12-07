@@ -1,7 +1,8 @@
 ﻿using Aalgro.ECommerce.Models;
+using Aalgro.ECommerce.Models.RequestModels;
+using Aalgro.ECommerce.Models.ResponseModels;
 using Aalgro.ECommerce.Services.CustomerService;
 using E_Commerce.Filters;
-using ECommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace E_Commerce.Controllers
         [Route("registration")]
         public IActionResult Registration(CustomerRegisterModel customerRegisterModel)
         {
-            return Ok();
+            return Created("",1);
         }
     }
 }
