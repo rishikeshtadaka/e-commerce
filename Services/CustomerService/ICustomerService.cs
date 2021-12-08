@@ -1,4 +1,5 @@
 ﻿using Aalgro.ECommerce.Domains;
+using Aalgro.ECommerce.Models.RequestModels;
 using Aalgro.ECommerce.Models.ResponseModels;
 using Aalgro.ECommerce.Services.BaseService;
 using System;
@@ -11,6 +12,8 @@ namespace Aalgro.ECommerce.Services.CustomerService
 {
     public interface ICustomerService : IService<CustomerModel>
     {
-        bool isValid(string username, string password);
+        Task<bool> IsValid(string username, string password);
+
+        Task Register(CustomerRegisterModel customerRegisterModel);
     }
 }

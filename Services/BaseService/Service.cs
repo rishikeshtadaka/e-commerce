@@ -41,6 +41,7 @@ namespace Aalgro.ECommerce.Services.BaseService
 
         protected async virtual Task InsertEntity(TDomain entity)
         {
+            entity.Id = 0;//To generate auto id.
             await _repository.InsertAsync(entity);
             await this.SaveChangesAsync();
         }

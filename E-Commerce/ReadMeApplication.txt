@@ -6,7 +6,7 @@
 6. Integration test cases
 7. Unit test case code coverage
 8. Swagger
-9. Exception handler
+9. Exception handler (Global and Action specific)
 10. DI
 11. Enable CORS
 12. Environment specific configuration

@@ -23,10 +23,10 @@ namespace E_Commerce.Controllers
 
         [HttpGet]
         [Transaction]
-        public async Task<IEnumerable<CustomerModel>> Get()
+        public async Task<ActionResult<IEnumerable<CustomerModel>>> Get()
         {
             var list = await this.customerService.Get();
-            return list;
+            return Ok(list);
         }
 
         [HttpPost]
