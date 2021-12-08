@@ -3,6 +3,7 @@ using Aalgro.ECommerce.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,11 @@ namespace Aalgro.ECommerce.Services.BaseService
         protected async virtual Task<IEnumerable<TDomain>> GetEntitiesAsync()
         {
             return await _repository.GetAsync();
+        }
+
+        public virtual async Task<IEnumerable<TDomain>> GetEntitiesAsync(Expression<Func<TDomain, bool>> predicate)
+        {
+            return await _repository.GetAsync(predicate);
         }
 
         protected async virtual Task InsertEntity(TDomain entity)

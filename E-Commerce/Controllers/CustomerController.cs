@@ -31,15 +31,19 @@ namespace E_Commerce.Controllers
 
         [HttpPost]
         [Route("login")]
-        public IActionResult Login(CustomerLoginModel customerLogin)
+        public async Task<IActionResult> Login(CustomerLoginModel customerLogin)
         {
-            return Ok();
+            var isValid = await this.customerService.IsValid(customerLogin.Username, customerLogin.Password);
+            if(isValid)
+                return Ok();
+            return Unauthorized();
         }
 
         [HttpPost]
         [Route("registration")]
-        public IActionResult Registration(CustomerRegisterModel customerRegisterModel)
+        public async Task<IActionResult> Registration(CustomerRegisterModel customerRegisterModel)
         {
+            await this.customerService.Register(customerRegisterModel);
             return Created("",1);
         }
     }

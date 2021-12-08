@@ -42,7 +42,7 @@ namespace Aalgro.ECommerce.Models.RequestModels
                                 ,
                 Mobile = this.Mobile
                                 ,
-                Password = this.Password
+                Password = this.Password//Encrypt password and store into DB.
             };
         }
 

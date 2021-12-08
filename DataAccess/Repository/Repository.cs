@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,10 +25,16 @@ namespace Aalgro.ECommerce.DataAccess.Repository
         {
             _dbSet.Remove(entity);
         }
-        public async Task<List<T>> GetAsync()
+        public async Task<IEnumerable<T>> GetAsync()
         {
             return await _dbSet.ToListAsync();
         }
+
+        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.Where(predicate).ToListAsync();
+        }
+
         public async Task SaveChangesAsync()
         {
             await this.context.SaveChangesAsync();

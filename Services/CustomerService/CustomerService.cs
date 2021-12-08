@@ -14,9 +14,10 @@ namespace Aalgro.ECommerce.Services.CustomerService
     public class CustomerService : Service<Customer,CustomerModel>, ICustomerService
     {
         public CustomerService(IRepository<Customer> repository) : base(repository) { }
-        public Task<bool> IsValid(string username, string password)
+        public async Task<bool> IsValid(string username, string password)
         {
-            throw new NotImplementedException();
+            var list = await this.GetEntitiesAsync(t => t.UserName == username && t.Password == password);
+            return list.Any();
         }
 
         public async Task Register(CustomerRegisterModel customerRegisterModel)
