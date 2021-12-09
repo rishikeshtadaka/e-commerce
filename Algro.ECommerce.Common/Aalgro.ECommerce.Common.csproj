@@ -6,7 +6,10 @@
 
   <ItemGroup>
     <Folder Include="Constants\" />
-    <Folder Include="Utilities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
   </ItemGroup>
 
 </Project>

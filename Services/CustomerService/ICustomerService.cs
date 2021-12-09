@@ -12,7 +12,7 @@ namespace Aalgro.ECommerce.Services.CustomerService
 {
     public interface ICustomerService : IService<CustomerModel>
     {
-        Task<bool> IsValid(string username, string password);
+        Task<string> IsValid(string username, string password);
 
         Task Register(CustomerRegisterModel customerRegisterModel);
     }

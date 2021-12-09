@@ -15,7 +15,9 @@ namespace DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-MOUGBF3\SQLEXPRESS;Initial Catalog=ECommerce;Integrated Security=True;");
+            //Read it from appSettings.json
+            var connectionString = @"Data Source=DESKTOP-MOUGBF3\SQLEXPRESS;Initial Catalog=ECommerce;Integrated Security=True;";
+            optionsBuilder.UseSqlServer(connectionString);
         }
     }
 }

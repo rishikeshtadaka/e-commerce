@@ -14,5 +14,7 @@ namespace Aalgro.ECommerce.DataAccess.Repository
         Task<IEnumerable<T>> GetAsync();
         Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>> predicate);
         Task SaveChangesAsync();
+        //IQueryable<T> GetQueryable();
+        //IEnumerable<T> GetEnumerable();
     }
 }

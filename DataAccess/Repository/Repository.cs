@@ -35,6 +35,16 @@ namespace Aalgro.ECommerce.DataAccess.Repository
             return await _dbSet.Where(predicate).ToListAsync();
         }
 
+        //public IQueryable<T> GetQueryable()
+        //{
+        //    return _dbSet.AsQueryable();
+        //}
+
+        //public IEnumerable<T> GetEnumerable()
+        //{
+        //    return _dbSet.AsEnumerable();
+        //}
+
         public async Task SaveChangesAsync()
         {
             await this.context.SaveChangesAsync();

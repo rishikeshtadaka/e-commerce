@@ -1,4 +1,5 @@
-﻿using Aalgro.ECommerce.DataAccess.Repository;
+﻿using Aalgro.ECommerce.Common.Utilities;
+using Aalgro.ECommerce.DataAccess.Repository;
 using Aalgro.ECommerce.Domains;
 using Aalgro.ECommerce.Models.RequestModels;
 using Aalgro.ECommerce.Models.ResponseModels;
@@ -14,10 +15,15 @@ namespace Aalgro.ECommerce.Services.CustomerService
     public class CustomerService : Service<Customer,CustomerModel>, ICustomerService
     {
         public CustomerService(IRepository<Customer> repository) : base(repository) { }
-        public async Task<bool> IsValid(string username, string password)
+        public async Task<string> IsValid(string username, string password)
         {
+            //var q=this._repository.GetQueryable().Where(t => t.UserName == username && t.Password == password).ToList();
+            //var enu = this._repository.GetEnumerable().Where(t => t.UserName == username && t.Password == password).ToList();
+
             var list = await this.GetEntitiesAsync(t => t.UserName == username && t.Password == password);
-            return list.Any();
+            if (list.Any())
+                Cryptology.GenerateJWT(username, "Testing");//TODO:replace key
+            return null;
         }
 
         public async Task Register(CustomerRegisterModel customerRegisterModel)

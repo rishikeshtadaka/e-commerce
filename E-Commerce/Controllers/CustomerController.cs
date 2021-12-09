@@ -3,6 +3,7 @@ using Aalgro.ECommerce.Models.RequestModels;
 using Aalgro.ECommerce.Models.ResponseModels;
 using Aalgro.ECommerce.Services.CustomerService;
 using E_Commerce.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace E_Commerce.Controllers
 
         [HttpGet]
         [Transaction]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<CustomerModel>>> Get()
         {
             var list = await this.customerService.Get();
@@ -33,8 +35,8 @@ namespace E_Commerce.Controllers
         [Route("login")]
         public async Task<IActionResult> Login(CustomerLoginModel customerLogin)
         {
-            var isValid = await this.customerService.IsValid(customerLogin.Username, customerLogin.Password);
-            if(isValid)
+            var token = await this.customerService.IsValid(customerLogin.Username, customerLogin.Password);
+            if(!String.IsNullOrEmpty(token))
                 return Ok();
             return Unauthorized();
         }
